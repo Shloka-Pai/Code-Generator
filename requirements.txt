@@ -1,0 +1,12 @@
+# Core ML dependencies
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.14.1+cu130
+transformers>=4.45.0
+accelerate>=0.26.0
+
+# UI
+streamlit>=1.36
+streamlit-ace>=0.1.1
+
+# Utilities (usually pre-installed, listed for completeness)
+# No external LLM APIs, no LangChain, no vector databases

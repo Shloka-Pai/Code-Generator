@@ -1,0 +1,276 @@
+{
+  "topics": {
+    "Arrays": {
+      "description": "A contiguous block of memory storing elements of the same type. Supports O(1) random access by index.",
+      "concepts": ["prefix sums", "two pointers", "sorting", "binary search on arrays", "kadane's algorithm", "sliding window on arrays"],
+      "common_operations": {
+        "access": "O(1)",
+        "search": "O(n) unsorted, O(log n) sorted",
+        "insert_end": "O(1) amortized",
+        "insert_middle": "O(n)",
+        "delete": "O(n)"
+      },
+      "edge_cases": [
+        "empty array",
+        "single element array",
+        "all elements identical",
+        "array with negative numbers",
+        "array already sorted",
+        "array sorted in reverse",
+        "integer overflow when summing elements"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 1000, values in [-1000, 1000]",
+        "medium": "1 <= n <= 10^5, values in [-10^9, 10^9]",
+        "hard": "1 <= n <= 10^6, values in [-10^9, 10^9]"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(1) or O(n) space",
+        "medium": "O(n log n) time, O(n) space",
+        "hard": "O(n) or O(n log n) time, O(1) or O(n) space"
+      }
+    },
+    "Strings": {
+      "description": "A sequence of characters. In most languages strings are immutable, so modifications create new strings.",
+      "concepts": ["two pointers", "sliding window", "hashing", "KMP pattern matching", "palindrome checking", "anagram detection"],
+      "common_operations": {
+        "access": "O(1)",
+        "search_substring": "O(n*m) naive, O(n+m) KMP",
+        "concatenation": "O(n)"
+      },
+      "edge_cases": [
+        "empty string",
+        "single character string",
+        "string with all identical characters",
+        "string with spaces or special characters",
+        "case sensitivity",
+        "very long strings"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= len(s) <= 1000, lowercase English letters only",
+        "medium": "1 <= len(s) <= 10^5, lowercase English letters",
+        "hard": "1 <= len(s) <= 10^6, any printable ASCII"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(1) or O(26) space",
+        "medium": "O(n) time, O(n) space",
+        "hard": "O(n) time, O(1) space"
+      }
+    },
+    "Linked Lists": {
+      "description": "A linear data structure where each node holds a value and a pointer to the next node. No random access.",
+      "concepts": ["fast and slow pointers", "reversal", "merge", "cycle detection (Floyd's algorithm)", "dummy head node"],
+      "common_operations": {
+        "access_by_index": "O(n)",
+        "insert_head": "O(1)",
+        "insert_tail": "O(n) without tail pointer",
+        "delete": "O(n) to find, O(1) to remove"
+      },
+      "edge_cases": [
+        "empty list (head is null)",
+        "single node list",
+        "list with a cycle",
+        "even vs odd length list",
+        "deleting the head node",
+        "deleting the tail node"
+      ],
+      "constraint_guidelines": {
+        "easy": "0 <= n <= 100, node values in [-100, 100]",
+        "medium": "0 <= n <= 10^4, node values in [-10^5, 10^5]",
+        "hard": "0 <= n <= 10^5, node values in [-10^9, 10^9]"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(1) space",
+        "medium": "O(n) time, O(1) space",
+        "hard": "O(n) time, O(1) space"
+      }
+    },
+    "Trees": {
+      "description": "A hierarchical data structure with a root node and subtrees of children. Binary trees have at most 2 children per node.",
+      "concepts": ["DFS (inorder, preorder, postorder)", "BFS (level order)", "height and depth", "BST properties", "lowest common ancestor", "path sum"],
+      "common_operations": {
+        "search_BST": "O(h) where h is height",
+        "insert_BST": "O(h)",
+        "balanced_tree_height": "O(log n)",
+        "skewed_tree_height": "O(n)"
+      },
+      "edge_cases": [
+        "empty tree (root is null)",
+        "single node tree",
+        "skewed tree (like a linked list)",
+        "complete binary tree",
+        "tree with duplicate values",
+        "negative node values"
+      ],
+      "constraint_guidelines": {
+        "easy": "0 <= n <= 100, node values in [-100, 100]",
+        "medium": "0 <= n <= 10^4, node values in [-10^5, 10^5]",
+        "hard": "0 <= n <= 10^5, node values in [-10^9, 10^9]"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(h) space for recursion stack",
+        "medium": "O(n) time, O(n) space",
+        "hard": "O(n) time, O(1) space (Morris traversal)"
+      }
+    },
+    "Graphs": {
+      "description": "A set of vertices connected by edges. Can be directed or undirected, weighted or unweighted.",
+      "concepts": ["BFS", "DFS", "topological sort", "Dijkstra's algorithm", "Union-Find (DSU)", "cycle detection", "connected components"],
+      "common_operations": {
+        "BFS_DFS": "O(V + E)",
+        "Dijkstra": "O((V + E) log V) with priority queue",
+        "Union_Find": "O(alpha(n)) amortized per operation"
+      },
+      "edge_cases": [
+        "disconnected graph",
+        "graph with self-loops",
+        "graph with parallel edges",
+        "empty graph (no vertices)",
+        "single vertex graph",
+        "negative edge weights (use Bellman-Ford, not Dijkstra)"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= V <= 100, 0 <= E <= 200",
+        "medium": "1 <= V <= 10^4, 0 <= E <= 10^5",
+        "hard": "1 <= V <= 10^5, 0 <= E <= 10^6"
+      },
+      "typical_complexities": {
+        "easy": "O(V + E) time, O(V) space",
+        "medium": "O((V+E) log V) time, O(V + E) space",
+        "hard": "O(V + E) time, O(V) space"
+      }
+    },
+    "Dynamic Programming": {
+      "description": "An optimization technique that solves problems by breaking them into overlapping subproblems and storing results to avoid recomputation.",
+      "concepts": ["memoization (top-down)", "tabulation (bottom-up)", "state definition", "recurrence relation", "space optimization", "knapsack", "LCS", "LIS"],
+      "common_patterns": [
+        "1D DP: dp[i] depends on dp[i-1] or dp[i-2]",
+        "2D DP: dp[i][j] depends on dp[i-1][j], dp[i][j-1]",
+        "Interval DP: dp[i][j] over subarray from i to j",
+        "Bitmask DP: dp[mask] for subset problems"
+      ],
+      "edge_cases": [
+        "empty input (n=0)",
+        "single element",
+        "all elements identical",
+        "negative values in input",
+        "very large n requiring space optimization"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 100",
+        "medium": "1 <= n <= 10^3 or 10^4",
+        "hard": "1 <= n <= 10^5 or 10^6"
+      },
+      "typical_complexities": {
+        "easy": "O(n) or O(n^2) time, O(n) space",
+        "medium": "O(n^2) time, O(n) or O(n^2) space",
+        "hard": "O(n log n) or O(n^2) time, O(n) space"
+      }
+    },
+    "Sliding Window": {
+      "description": "A technique using a window (subarray/substring) that slides over data to efficiently compute results without restarting from scratch.",
+      "concepts": ["fixed-size window", "variable-size window", "two pointers", "frequency map with hashmap", "shrink and expand window"],
+      "when_to_use": "When the problem asks for a contiguous subarray or substring satisfying some condition.",
+      "edge_cases": [
+        "window size larger than array",
+        "all elements satisfy the condition",
+        "no valid window exists",
+        "single element array",
+        "duplicate elements in window"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 1000, fixed window size k",
+        "medium": "1 <= n <= 10^5, variable window",
+        "hard": "1 <= n <= 10^6, multiple constraints on window"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(1) space",
+        "medium": "O(n) time, O(k) space for frequency map",
+        "hard": "O(n) time, O(1) space"
+      }
+    },
+    "Stacks and Queues": {
+      "description": "Stack is LIFO (Last In First Out). Queue is FIFO (First In First Out). Both support O(1) push/pop/enqueue/dequeue.",
+      "concepts": ["monotonic stack", "next greater element", "valid parentheses", "BFS with queue", "implement stack using queues"],
+      "edge_cases": [
+        "empty stack/queue operations",
+        "single element",
+        "all elements in decreasing order (for monotonic stack)",
+        "unbalanced parentheses"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 1000",
+        "medium": "1 <= n <= 10^5",
+        "hard": "1 <= n <= 10^6"
+      },
+      "typical_complexities": {
+        "easy": "O(n) time, O(n) space",
+        "medium": "O(n) time, O(n) space",
+        "hard": "O(n) time, O(1) space"
+      }
+    },
+    "Sorting": {
+      "description": "Arranging elements in a specific order. Comparison-based sorts have O(n log n) lower bound. Non-comparison sorts can be O(n).",
+      "concepts": ["merge sort", "quick sort", "heap sort", "counting sort", "radix sort", "custom comparators"],
+      "complexities": {
+        "merge_sort": "O(n log n) time, O(n) space, stable",
+        "quick_sort": "O(n log n) average, O(n^2) worst, O(log n) space",
+        "heap_sort": "O(n log n) time, O(1) space, not stable",
+        "counting_sort": "O(n + k) time, O(k) space, for small integer ranges"
+      },
+      "edge_cases": [
+        "already sorted array",
+        "reverse sorted array",
+        "array with duplicates",
+        "single element",
+        "empty array"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 1000",
+        "medium": "1 <= n <= 10^5",
+        "hard": "1 <= n <= 10^6"
+      }
+    },
+    "Binary Search": {
+      "description": "Efficiently finds a target in a sorted array by repeatedly halving the search space. O(log n) time.",
+      "concepts": ["classic binary search", "lower bound", "upper bound", "binary search on answer", "rotated sorted array"],
+      "template": "lo=0, hi=n-1; while lo<=hi: mid=(lo+hi)//2; if arr[mid]==target: return mid; elif arr[mid]<target: lo=mid+1; else: hi=mid-1",
+      "edge_cases": [
+        "target not in array",
+        "single element array",
+        "all elements identical",
+        "target at boundaries (first or last element)",
+        "integer overflow in mid calculation (use lo + (hi-lo)//2)"
+      ],
+      "constraint_guidelines": {
+        "easy": "1 <= n <= 1000, sorted array",
+        "medium": "1 <= n <= 10^5",
+        "hard": "1 <= n <= 10^6, binary search on answer"
+      },
+      "typical_complexities": {
+        "easy": "O(log n) time, O(1) space",
+        "medium": "O(log n) or O(n log n) time, O(1) space",
+        "hard": "O(n log n) or O(log^2 n) time, O(1) space"
+      }
+    }
+  },
+  "languages": {
+    "C++": {
+      "notes": "Use #include<bits/stdc++.h>, int main(), cin/cout. Vectors for arrays. Use long long for large numbers.",
+      "solution_template": "#include<bits/stdc++.h>\nusing namespace std;\nint main(){\n    // solution here\n    return 0;\n}"
+    },
+    "Python": {
+      "notes": "Use sys.stdin for fast input. Lists for arrays. No need for explicit types. Use collections.defaultdict, deque.",
+      "solution_template": "import sys\ninput = sys.stdin.readline\n\ndef solve():\n    # solution here\n    pass\n\nsolve()"
+    },
+    "Java": {
+      "notes": "Use Scanner or BufferedReader. ArrayList for dynamic arrays. Use long for large numbers. Class name must be Main.",
+      "solution_template": "import java.util.*;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        // solution here\n    }\n}"
+    }
+  },
+  "difficulty_guidelines": {
+    "Easy": "Single concept, straightforward implementation, O(n) or O(n log n), minimal edge cases, suitable for beginners.",
+    "Medium": "Combines 2 concepts, requires insight or optimization, O(n log n) or O(n^2) with optimization, several edge cases.",
+    "Hard": "Multiple concepts, non-obvious approach, tight constraints requiring optimal solution, many edge cases."
+  }
+}
